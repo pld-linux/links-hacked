@@ -17,7 +17,7 @@ Summary(ru):	Текстовый WWW броузер типа Lynx
 Summary(uk):	Текстовий WWW броузер типу Lynx
 Name:		links-hacked
 Version:	031220
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Applications/Networking
 Source0:	http://xray.sai.msu.ru/~karpov/%{name}/downloads/%{name}-%{version}.tgz
@@ -32,7 +32,6 @@ Patch2:		%{name}-etc_dir.patch
 Patch3:		%{name}-ac25x.patch
 Patch4:		%{name}-suffix.patch
 Patch5:		%{name}-gcc34.patch
-Patch6:		%{name}-png-segv.patch
 URL:		http://xray.sai.msu.ru/~karpov/links-hacked/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -41,14 +40,15 @@ BuildRequires:	openssl-devel >= 0.9.7d
 BuildRequires:	zlib-devel
 %if %{with graphics}
 %{?with_directfb:BuildRequires:	DirectFB-devel}
+%{?with_x:BuildRequires:	XFree86-devel}
+%{?with_javascript:BuildRequires:	bison}
+%{?with_javascript:BuildRequires:	flex}
 BuildRequires:	freetype-devel
-BuildRequires:	libpng-devel
+BuildRequires:	libpng-devel >= 2:1.2.7-2
 BuildRequires:	libjpeg-devel
 BuildRequires:	libtiff-devel
-%{?with_javascript:BuildRequires:	flex}
-%{?with_javascript:BuildRequires:	bison}
 %{?with_svga:BuildRequires:	svgalib-devel}
-%{?with_x:BuildRequires:	XFree86-devel}
+Requires:	libpng >= 2:1.2.7-2
 %endif
 Provides:	webclient
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -117,7 +117,7 @@ Links - це текстовий WWW броузер, на перший погляд схожий на Lynx, але
 %patch3 -p1
 %patch4 -p1
 %patch5 -p1
-%patch6 -p1
+
 rm -rf autom4te.cache
 
 %build
