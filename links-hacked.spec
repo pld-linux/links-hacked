@@ -40,7 +40,7 @@ BuildRequires:	automake
 BuildRequires:	gpm-devel
 BuildRequires:	openssl-devel >= 0.9.7
 BuildRequires:	zlib-devel
-%if%{!?_without_graphics:1}%{?_without_graphics:0}
+%if %{!?_without_graphics:1}%{?_without_graphics:0}
 %{!?_without_directfb:BuildRequires:	DirectFB-devel}
 BuildRequires:	freetype-devel
 BuildRequires:	libpng-devel
