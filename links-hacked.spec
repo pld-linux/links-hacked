@@ -27,10 +27,11 @@ Source0:	http://xray.sai.msu.ru/~karpov/%{name}/downloads/%{name}-%{version}.tgz
 Source1:	http://xray.sai.msu.ru/~karpov/%{name}/downloads/links-fonts-new.tgz
 Source2:	%{name}.desktop
 Source3:	linksh.png
-Patch0:	%{name}-js-Date-getTime.patch
-Patch1:	%{name}-js-submit-nodefer.patch
-Patch2:	%{name}-etc_dir.patch
-Patch3:	%{name}-ac25x.patch
+Patch0:		%{name}-js-Date-getTime.patch
+Patch1:		%{name}-js-submit-nodefer.patch
+Patch2:		%{name}-etc_dir.patch
+Patch3:		%{name}-ac25x.patch
+Patch4:		%{name}-suffix.patch
 URL:		http://xray.sai.msu.ru/~karpov/%{name}/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -113,6 +114,7 @@ Links - це текстовий WWW броузер, на перший погляд схожий на Lynx, але
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %build
 rm -f missing
