@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without  javascript	# don't use javascript interpreter
+%bcond_without	javascript	# don't use javascript interpreter
 %bcond_without	graphics	# don't use graphics
 %bcond_without	svga		# compile without svgalib graphics driver
 %bcond_without	directfb	# compile without DirectFB support
