@@ -1,4 +1,3 @@
-# $Revision: 1.1 $
 #
 # Conditional build:
 # _without_javascript - don't use javascript interpreter
@@ -36,7 +35,6 @@ URL:		http://xray.sai.msu.ru/~karpov/%{name}/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gpm-devel
-BuildRequires:	ncurses-devel >= 5.1
 BuildRequires:	openssl-devel >= 0.9.7
 BuildRequires:	zlib-devel
 %if%{!?_without_graphics:1}%{?_without_graphics:0}
