@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Links-hacked
+Comment=Graphical links
+Comment[pl]=Graficzny links
+Exec=linksh -g
+Terminal=0
+Icon=linksh.png
+Type=Application
+# vi: encoding=utf-8
