@@ -1,5 +1,5 @@
---- links-2.1pre7/struct.h.orig	Mon Jun 10 01:24:28 2002
-+++ links-2.1pre7/struct.h	Thu Dec 26 01:24:58 2002
+--- links-hacked-030709/js/struct.h.orig	Mon Jun 10 01:24:28 2002
++++ links-hacked-030709/js/struct.h	Thu Dec 26 01:24:58 2002
 @@ -82,7 +82,7 @@
  		long mid; /* Jako Mikulasovo ID - to je byro! B;-) */
  		long type;
@@ -9,8 +9,8 @@
  		long index; /* smysl ma jen u selectitek */
  		struct localnamespace* next;
  	}lns;
---- links-2.1pre7/builtin.c.orig	Sun Sep 22 10:35:38 2002
-+++ links-2.1pre7/builtin.c	Thu Dec 26 01:25:16 2002
+--- links-hacked-030709/js/builtin.c.orig	Sun Sep 22 10:35:38 2002
++++ links-hacked-030709/js/builtin.c	Thu Dec 26 01:25:16 2002
 @@ -757,6 +757,7 @@
  	long*pompointer;
  	int i=0,j=0;

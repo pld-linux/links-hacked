@@ -12,20 +12,6 @@ diff -urN aaa/links-current/acconfig.h links-current/acconfig.h
 -#undef AC_LITTLE_ENDIAN
 +#undef HAVE_LITTLE_ENDIAN
  
-diff -urN aaa/links-current/config.h.in links-current/config.h.in
---- aaa/links-current/config.h.in	Thu May 16 16:20:23 2002
-+++ links-current/config.h.in	Thu May 23 20:59:05 2002
-@@ -418,8 +418,8 @@
- #undef HAVE_JPEG
- 
- /* */
--#undef AC_BIG_ENDIAN
-+#undef HAVE_BIG_ENDIAN
- 
- /* */
--#undef AC_LITTLE_ENDIAN
-+#undef HAVE_LITTLE_ENDIAN
- 
 diff -urN aaa/links-current/configure.in links-current/configure.in
 --- aaa/links-current/configure.in	Thu May 16 08:06:43 2002
 +++ links-current/configure.in	Thu May 23 20:57:36 2002

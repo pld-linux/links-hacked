@@ -5,7 +5,7 @@ diff -Nru links-hacked-030316/default.c links-hacked-030316.new/default.c
  	struct stat st;
  	unsigned char *home = stracpy(getenv("HOME"));
  	unsigned char *home_links;
-+	unsigned char *etc_dir = getenv("ETC_DIR");
++	unsigned char *etc_dir = getenv("HOME_ETC");
  	unsigned char *config_dir = stracpy(getenv("CONFIG_DIR"));
  
  	if (n) *n = 1;
@@ -34,7 +34,7 @@ diff -Nru links-hacked-030316/default.c links-hacked-030316.new/default.c
 -			add_to_strn(&home_links, "/links");
 +	if (etc_dir) {
 +		home_links = stracpy(etc_dir);
-+		add_to_strn(&home_links, "/links");
++		add_to_strn(&home_links, "/.links");
 +	} else {
 +	  if (!home) {
 +		  int i;

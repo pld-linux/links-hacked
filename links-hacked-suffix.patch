@@ -5,8 +5,8 @@ diff -Nru links-hacked-030316/default.c links-hacked-030316.2/default.c
  	if (n) *n = 1;
  	if (etc_dir) {
  		home_links = stracpy(etc_dir);
--		add_to_strn(&home_links, "/links");
-+		add_to_strn(&home_links, "/linksh");
+-		add_to_strn(&home_links, "/.links");
++		add_to_strn(&home_links, "/.linksh");
  	} else {
  	  if (!home) {
  		  int i;

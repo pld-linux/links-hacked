@@ -1,12 +1,21 @@
---- links-2.1pre7/jsint.c.orig	Sun Sep 22 10:35:39 2002
-+++ links-2.1pre7/jsint.c	Thu Dec 26 03:37:35 2002
-@@ -2471,7 +2471,8 @@
+--- links-hacked-030709/js/jsint.c.orig	2003-05-12 00:28:14.000000000 +0200
++++ links-hacked-030709/js/jsint.c	2003-07-20 17:17:52.000000000 +0200
+@@ -2482,7 +2482,17 @@
  	if (!form)return;
  
  	u=get_form_url(fd->ses,fd,form,&has_onsubmit);
--	goto_url_f(fd->ses,NULL,u,NULL,fd,form->form_num, has_onsubmit,0);
-+	goto_url_f(fd->ses,NULL,u,NULL,fd,form->form_num, 0 /*has_onsubmit*/,0);
-+        /* disabled has_onsumbit - deferring here prevents submitting form in timeout handler! */
+-	goto_url_f(fd->ses,NULL,u,NULL,fd,form->form_num, has_onsubmit,0,0);
++	goto_url_f(fd->ses,NULL,u,NULL,fd,form->form_num, 0 /*has_onsubmit*/,0,0);
++	/* disabled has_onsumbit - deferring here caused calling submit after
++	   processing _whole_ script (not in the moment of call!), which caused
++	   serious problems...
++	   e.g. NerdQuiz autosend-on-timeout form: script calls form.submit(),
++		then sets submitted=true;
++		onsubmit checks submitted and refuses to send the form if
++		submitted==true
++
++	   But note: disabling this isn't the Right Way to fix, it may omit
++	             some validation scripts... :(  */
  	mem_free(u);
  	draw_fd(fd);
  	change_screen_status(fd->ses);
