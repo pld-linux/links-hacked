@@ -24,7 +24,9 @@ Release:	1
 License:	GPL v2
 Group:		Applications/Networking
 Source0:	http://xray.sai.msu.ru/~karpov/%{name}/downloads/%{name}-%{version}.tgz
+# Source0-md5:	3686c4af8746e520cdf80aedca5be649
 Source1:	http://xray.sai.msu.ru/~karpov/%{name}/downloads/links-fonts-new.tgz
+# Source1-md5:	1176ee9132c9df8c1ec955e28bff6f5b
 Source2:	%{name}.desktop
 Source3:	linksh.png
 Patch0:		%{name}-js-Date-getTime.patch
