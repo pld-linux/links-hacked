@@ -34,6 +34,7 @@ Patch1:		%{name}-js-submit-nodefer.patch
 Patch2:		%{name}-etc_dir.patch
 Patch3:		%{name}-ac25x.patch
 Patch4:		%{name}-suffix.patch
+Patch5:		%{name}-gcc34.patch
 URL:		http://xray.sai.msu.ru/~karpov/links-hacked/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -117,6 +118,7 @@ Links - це текстовий WWW броузер, на перший погляд схожий на Lynx, але
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+%patch5 -p1
 rm -rf autom4te.cache
 
 %build

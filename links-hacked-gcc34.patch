@@ -1,0 +1,33 @@
+--- links-hacked/options.c.orig	2003-10-28 11:56:19.000000000 +0100
++++ links-hacked/options.c	2004-05-04 17:28:20.424630136 +0200
+@@ -261,7 +261,7 @@ void load_options()
+ 
+         return;
+ 
+-load_failure:
++load_failure:;
+         /* internal("Can't load options!\n"); */
+ }
+ 
+--- links-hacked/options_manager.c.orig	2003-05-13 21:37:49.000000000 +0200
++++ links-hacked/options_manager.c	2004-05-04 17:24:25.067409872 +0200
+@@ -164,7 +164,7 @@ unsigned char *options_type_item(struct 
+                 }
+                 add_to_str(&txt,&l,": ");
+                 if(item->value) add_to_str(&txt,&l,item->value);
+-        already_drawn:
++        already_drawn:;
+         }
+         return txt;
+ }
+--- links-hacked/view_gr.c.orig	2003-10-25 20:30:15.000000000 +0200
++++ links-hacked/view_gr.c	2004-05-04 17:29:41.859250192 +0200
+@@ -1401,7 +1401,7 @@ void draw_title(struct f_data_c *f)
+                                           term->dev->size.x2, y2,
+                                           bfu_bg_color);
+ 
+-        tabs_end:
++        tabs_end:;
+         }
+ 
+ }
