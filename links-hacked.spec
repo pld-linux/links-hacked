@@ -44,7 +44,6 @@ BuildRequires:	freetype-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libtiff-devel
-BuildRequires:	libpng-devel
 %{?with_javascript:BuildRequires:	flex}
 %{?with_javascript:BuildRequires:	bison}
 %{?with_svga:BuildRequires:	svgalib-devel}
