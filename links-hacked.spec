@@ -29,7 +29,7 @@ Source2:	%{name}.desktop
 Source3:	linksh.png
 Patch0:	%{name}-js-Date-getTime.patch
 Patch1:	%{name}-js-submit-nodefer.patch
-Patch2:	%{name}-home_etc.patch
+Patch2:	%{name}-etc_dir.patch
 Patch3:	%{name}-ac25x.patch
 URL:		http://xray.sai.msu.ru/~karpov/%{name}/
 BuildRequires:	autoconf
