@@ -117,9 +117,9 @@ Links - це текстовий WWW броузер, на перший погляд схожий на Lynx, але
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+rm -rf autom4te.cache
 
 %build
-rm -f missing
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
@@ -138,13 +138,12 @@ rm -f missing
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_applnkdir}/Network/WWW,%{_pixmapsdir}}
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
-install %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW
-
-#install %{SOURCE2} $RPM_BUILD_ROOT%{_mandir}/pl/man1/links2.1
+install %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE3} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
@@ -154,7 +153,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS BUGS ChangeLog README SITES TODO docs/*
 %attr(755,root,root) %{_bindir}/*
-%{_applnkdir}/Network/WWW/*
-%{_mandir}/man*/*
-#%lang(pl) %{_mandir}/pl/man*/*
+%{_mandir}/man1/*
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
