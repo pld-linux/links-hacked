@@ -1,16 +1,16 @@
 #
 # Conditional build:
-# _without_javascript	- don't use javascript interpreter
-# _without_graphics	- don't use graphics
-# _without_svga		- compile without svgalib graphics driver
-# _without_directfb	- compile without DirectFB support
-# _without_x		- compile without X Window System graphics driver
-# _without_fb		- compile without Linux Framebuffer graphics driver
-# _without_pmshell	- compile without PMShell graphics driver
-# _without_atheos	- compile without Atheos graphics driver
+%bcond_without  javascript	# don't use javascript interpreter
+%bcond_without	graphics	# don't use graphics
+%bcond_without	svga		# compile without svgalib graphics driver
+%bcond_without	directfb	# compile without DirectFB support
+%bcond_without	x		# compile without X Window System graphics driver
+%bcond_without	fb		# compile without Linux Framebuffer graphics driver
+%bcond_without	pmshell		# compile without PMShell graphics driver
+%bcond_without	atheos		# compile without Atheos graphics driver
 #
 %ifnarch %{ix86} alpha
-%define _without_svga 1
+%undefine 	with_svga
 %endif
 Summary:	Lynx-like WWW browser
 Summary(es):	El links es un browser para modo texto, similar a lynx
@@ -19,12 +19,12 @@ Summary(pt_BR):	O links И um browser para modo texto, similar ao lynx
 Summary(ru):	Текстовый WWW броузер типа Lynx
 Summary(uk):	Текстовий WWW броузер типу Lynx
 Name:		links-hacked
-Version:	030709
+Version:	031220
 Release:	1
 License:	GPL v2
 Group:		Applications/Networking
 Source0:	http://xray.sai.msu.ru/~karpov/%{name}/downloads/%{name}-%{version}.tgz
-# Source0-md5:	74fb710ecfa89aceb51211f7dce24ab0
+# Source0-md5:	402d9490638b0e158d6122bd5bb830f2
 Source1:	http://xray.sai.msu.ru/~karpov/%{name}/downloads/links-fonts-new.tgz
 # Source1-md5:	1176ee9132c9df8c1ec955e28bff6f5b
 Source2:	%{name}.desktop
@@ -40,16 +40,16 @@ BuildRequires:	automake
 BuildRequires:	gpm-devel
 BuildRequires:	openssl-devel >= 0.9.7c
 BuildRequires:	zlib-devel
-%if %{!?_without_graphics:1}%{?_without_graphics:0}
-%{!?_without_directfb:BuildRequires:	DirectFB-devel}
+%if %{with graphics}
+%{?with_directfb:BuildRequires:	DirectFB-devel}
 BuildRequires:	freetype-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libtiff-devel
-%{!?_without_javascript:BuildRequires:	flex}
-%{!?_without_javascript:BuildRequires:	bison}
-%{!?_without_svga:BuildRequires:	svgalib-devel}
-%{!?_without_x:BuildRequires:	XFree86-devel}
+%{?with_javascript:BuildRequires:	flex}
+%{?with_javascript:BuildRequires:	bison}
+%{?with_svga:BuildRequires:	svgalib-devel}
+%{?with_x:BuildRequires:	XFree86-devel}
 %endif
 Provides:	webclient
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -63,8 +63,8 @@ different:
 - uses drop-down menu (like in Midnight Commander),
 - can download files in background.
 
-%{!?_without_graphics:This version can work in graphical mode.}
-%{!?_without_javascript:This version has support for JavaScript.}
+%{?with_graphics:This version can work in graphical mode.}
+%{?with_javascript:This version has support for JavaScript.}
 
 Links-hacked is based on links2 and elinks.
 
@@ -82,8 +82,8 @@ ale mimo wszystko inn╠:
 - u©ywa opuszczanego menu (jak w Midnight Commanderze),
 - mo©e ╤ci╠gaФ pliki w tle.
 
-%{!?_without_graphics:Ta wersja mo©e pracowaФ w trybie graficznym.}
-%{!?_without_javascript:Ta wersja obsЁuguje JavaScript.}
+%{?with_graphics:Ta wersja mo©e pracowaФ w trybie graficznym.}
+%{?with_javascript:Ta wersja obsЁuguje JavaScript.}
 
 Links-hacked jest oparty na kodzie links2 i elinksa.
 
@@ -111,7 +111,7 @@ Links - це текстовий WWW броузер, на перший погляд схожий на Lynx, але
 - може завантажувати файли в фон╕.
 
 %prep
-%setup -q -a1
+%setup -q -n %{name} -a1
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
@@ -126,14 +126,14 @@ rm -f missing
 %{__automake}
 %configure \
 	--program-suffix=h \
-	%{!?_without_graphics:--enable-graphics} \
-	%{!?_without_javascript:--enable-javascript} \
-	%{?_without_svga:--without-svgalib} \
-	%{?_without_x:--without-x} \
-	%{?_without_fb:--without-fb} \
-	%{?_without_pmshell:--without-pmshell} \
-	%{?_without_atheos:--without-atheos} \
-	%{?_without_directfb:--without-directfb}
+	%{?with_graphics:--enable-graphics} \
+	%{?with_javascript:--enable-javascript} \
+	%{!?with_svga:--without-svgalib} \
+	%{!?with_x:--without-x} \
+	%{!?with_fb:--without-fb} \
+	%{!?with_pmshell:--without-pmshell} \
+	%{!?with_atheos:--without-atheos} \
+	%{!?with_directfb:--without-directfb}
 %{__make}
 
 %install
