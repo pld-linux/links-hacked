@@ -1,0 +1,29 @@
+--- links-hacked/intl/english.lng.orig	2003-08-05 17:54:19.000000000 +0200
++++ links-hacked/intl/english.lng	2005-01-15 18:18:29.952249944 +0100
+@@ -189,7 +189,7 @@
+ T_ERROR_LOADING, "Error loading",
+ T_COULD_NOT_CREATE_FILE, "Could not create file",
+ T_FILE_OVERWRITE, "Overwrite file",
+-T_FILE_ALREADY_EXISTS, "This file already exisis:\n",
++T_FILE_ALREADY_EXISTS, "This file already exists:\n",
+ T_ALTERNATIVE_FILENAME, "The alternative filename is:\n",
+ T_SAVE_UNDER_ALTERNATIVE_NAME, "Save under the alternative name",
+ T_OVERWRITE_FILE, "Overwrite the original file",
+@@ -362,7 +362,7 @@
+ T_BOOKMARKS_ALREADY_IN_USE, "Bookmarks are already in use!",
+ T_ASSOCIATIONS_ALREADY_IN_USE, "Associations are already in use!",
+ T_EXTENSIONS_ALREADY_IN_USE, "Extensions are already in use!",
+-T_VIDEO_OPTIONS_TEXT, "Recommended User gamma setting:\n 1.33 for dark room, 1.11 for very dim room, 1 form usual computer workspace lighting, 0.88 for bright environment lighting.",
++T_VIDEO_OPTIONS_TEXT, "Recommended User gamma setting:\n 1.33 for dark room, 1.11 for very dim room, 1 for usual computer workspace lighting, 0.88 for bright environment lighting.",
+ T_GAMMA_CORRECTION, "Gamma Correction",
+ T_RED_DISPLAY_GAMMA, "Red display gamma",
+ T_GREEN_DISPLAY_GAMMA, "Green display gamma",
+@@ -461,7 +461,7 @@
+ T_ALLOW_TO_CLOSE_LAST_TAB, "Allow to close last tab",
+ T_SHOW_TABBAR, "Show tabs bar",
+ T_SHOW_TABBAR_IF_SINGLE_TAB, "Show tabs bar if there is only one tab",
+-T_TOOLBAR_BUTTONS, "Toolbal Buttons",
++T_TOOLBAR_BUTTONS, "Toolbar Buttons",
+ T_MINI_STATUS, "Mini Status",
+ T_CONNECTIONG_CONNECTIONS, "'Connecting' connections",
+ T_RUNNING_CONNECTIONS, "'Running' connections",
