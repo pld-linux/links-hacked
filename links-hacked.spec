@@ -35,6 +35,7 @@ Patch5:		%{name}-gcc34.patch
 URL:		http://xray.sai.msu.ru/~karpov/links-hacked/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	bzip2-devel
 BuildRequires:	gpm-devel
 BuildRequires:	openssl-devel >= 0.9.7d
 BuildRequires:	zlib-devel
