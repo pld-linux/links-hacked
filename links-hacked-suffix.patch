@@ -1,0 +1,41 @@
+diff -Nru links-hacked-030316/default.c links-hacked-030316.2/default.c
+--- links-hacked-030316/default.c	Mon Apr  7 12:50:49 2003
++++ links-hacked-030316.2/default.c	Mon Apr  7 12:58:34 2003
+@@ -239,7 +239,7 @@
+ 	if (n) *n = 1;
+ 	if (etc_dir) {
+ 		home_links = stracpy(etc_dir);
+-		add_to_strn(&home_links, "/links");
++		add_to_strn(&home_links, "/linksh");
+ 	} else {
+ 	  if (!home) {
+ 		  int i;
+@@ -263,16 +263,16 @@
+ 			add_to_strn(&home_links, config_dir);
+ 			while (home_links[0] && dir_sep(home_links[strlen(home_links) - 1])) home_links[strlen(home_links) - 1] = 0;
+ 			if (stat(home_links, &st) != -1 && S_ISDIR(st.st_mode)) {
+-				add_to_strn(&home_links, "/links");
++				add_to_strn(&home_links, "/linksh");
+ 	    	} else {
+ 				fprintf(stderr, "CONFIG_DIR set to %s. But directory %s doesn't exist.\n\007", config_dir, home_links);
+ 				sleep(3);
+ 				mem_free(home_links);
+ 				home_links = stracpy(home);
+-				add_to_strn(&home_links, ".links");
++				add_to_strn(&home_links, ".linksh");
+ 			}	
+ 			mem_free(config_dir);
+-		} else add_to_strn(&home_links, ".links");
++		} else add_to_strn(&home_links, ".linksh");
+ 	}
+ 	if (stat(home_links, &st)) {
+ 		if (!mkdir(home_links, 0777)) goto home_creat;
+@@ -283,7 +283,7 @@
+ 	first_failed:
+ 	mem_free(home_links);
+ 	home_links = stracpy(home);
+-	add_to_strn(&home_links, "links");
++	add_to_strn(&home_links, "linksh");
+ 	if (stat(home_links, &st)) {
+ 		if (!mkdir(home_links, 0777)) goto home_creat;
+ 		goto failed;
