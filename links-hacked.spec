@@ -17,7 +17,7 @@ Summary(ru):	Текстовый WWW броузер типа Lynx
 Summary(uk):	Текстовий WWW броузер типу Lynx
 Name:		links-hacked
 Version:	031220
-Release:	4
+Release:	5
 License:	GPL v2
 Group:		Applications/Networking
 Source0:	http://xray.sai.msu.ru/~karpov/links-hacked/downloads/%{name}-%{version}.tgz
@@ -32,6 +32,8 @@ Patch2:		%{name}-etc_dir.patch
 Patch3:		%{name}-ac25x.patch
 Patch4:		%{name}-suffix.patch
 Patch5:		%{name}-gcc34.patch
+Patch6:		%{name}-en-fix.patch
+Patch7:		%{name}-pl-update.patch
 URL:		http://xray.sai.msu.ru/~karpov/links-hacked/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -118,8 +120,13 @@ Links - це текстовий WWW броузер, на перший погляд схожий на Lynx, але
 %patch3 -p1
 %patch4 -p1
 %patch5 -p1
+%patch6 -p1
+%patch7 -p1
 
 rm -rf autom4te.cache
+
+cd intl
+./gen-intl
 
 %build
 %{__aclocal}
