@@ -1,16 +1,16 @@
 #
 # Conditional build:
-# _without_javascript - don't use javascript interpreter
-# _without_graphics - don't use graphics
-# _without_svgalib - compile without svgalib graphics driver
-# _without_directfb - compile without DirectFB support
-# _without_x - compile without X Window System graphics driver
-# _without_fb - compile without Linux Framebuffer graphics driver
-# _without_pmshell - compile without PMShell graphics driver
-# _without_atheos - compile without Atheos graphics driver
+# _without_javascript	- don't use javascript interpreter
+# _without_graphics	- don't use graphics
+# _without_svga		- compile without svgalib graphics driver
+# _without_directfb	- compile without DirectFB support
+# _without_x		- compile without X Window System graphics driver
+# _without_fb		- compile without Linux Framebuffer graphics driver
+# _without_pmshell	- compile without PMShell graphics driver
+# _without_atheos	- compile without Atheos graphics driver
 #
 %ifnarch %{ix86} alpha
-%define _without_svgalib 1
+%define _without_svga 1
 %endif
 Summary:	Lynx-like WWW browser
 Summary(es):	El links es un browser para modo texto, similar a lynx
@@ -48,7 +48,7 @@ BuildRequires:	libjpeg-devel
 BuildRequires:	libtiff-devel
 %{!?_without_javascript:BuildRequires:	flex}
 %{!?_without_javascript:BuildRequires:	bison}
-%{!?_without_svgalib:BuildRequires:	svgalib-devel}
+%{!?_without_svga:BuildRequires:	svgalib-devel}
 %{!?_without_x:BuildRequires:	XFree86-devel}
 %endif
 Provides:	webclient
@@ -128,7 +128,7 @@ rm -f missing
 	--program-suffix=h \
 	%{!?_without_graphics:--enable-graphics} \
 	%{!?_without_javascript:--enable-javascript} \
-	%{?_without_svgalib:--without-svgalib} \
+	%{?_without_svga:--without-svgalib} \
 	%{?_without_x:--without-x} \
 	%{?_without_fb:--without-fb} \
 	%{?_without_pmshell:--without-pmshell} \
