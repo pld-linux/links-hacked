@@ -17,7 +17,7 @@ Summary(ru):	Текстовый WWW броузер типа Lynx
 Summary(uk):	Текстовий WWW броузер типу Lynx
 Name:		links-hacked
 Version:	031220
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/Networking
 Source0:	http://xray.sai.msu.ru/~karpov/%{name}/downloads/%{name}-%{version}.tgz
@@ -44,6 +44,7 @@ BuildRequires:	freetype-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libtiff-devel
+BuildRequires:	libpng-devel
 %{?with_javascript:BuildRequires:	flex}
 %{?with_javascript:BuildRequires:	bison}
 %{?with_svga:BuildRequires:	svgalib-devel}
