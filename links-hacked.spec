@@ -34,7 +34,7 @@ Patch1:		%{name}-js-submit-nodefer.patch
 Patch2:		%{name}-etc_dir.patch
 Patch3:		%{name}-ac25x.patch
 Patch4:		%{name}-suffix.patch
-URL:		http://xray.sai.msu.ru/~karpov/%{name}/
+URL:		http://xray.sai.msu.ru/~karpov/links-hacked/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gpm-devel
