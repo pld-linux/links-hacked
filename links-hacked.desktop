@@ -7,4 +7,5 @@ Exec=linksh -g
 Terminal=false
 Icon=linksh.png
 Type=Application
+Categories=Network;WebBrowser;
 # vi: encoding=utf-8
