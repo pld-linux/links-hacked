@@ -10,11 +10,11 @@
 %bcond_without	atheos		# compile without Atheos graphics driver
 #
 Summary:	Lynx-like WWW browser
-Summary(es.UTF-8):   El links es un browser para modo texto, similar a lynx
-Summary(pl.UTF-8):   Podobna do Lynksa przeglądarka WWW
-Summary(pt_BR.UTF-8):   O links é um browser para modo texto, similar ao lynx
-Summary(ru.UTF-8):   Текстовый WWW броузер типа Lynx
-Summary(uk.UTF-8):   Текстовий WWW броузер типу Lynx
+Summary(es.UTF-8):	El links es un browser para modo texto, similar a lynx
+Summary(pl.UTF-8):	Podobna do Lynksa przeglądarka WWW
+Summary(pt_BR.UTF-8):	O links é um browser para modo texto, similar ao lynx
+Summary(ru.UTF-8):	Текстовый WWW броузер типа Lynx
+Summary(uk.UTF-8):	Текстовий WWW броузер типу Lynx
 Name:		links-hacked
 Version:	031220
 Release:	6
