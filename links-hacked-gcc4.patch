@@ -1,0 +1,19 @@
+--- links-hacked/font.c.orig	2006-09-28 23:08:51.000000000 +0000
++++ links-hacked/font.c	2006-09-28 23:09:03.000000000 +0000
+@@ -5,7 +5,6 @@
+ inline static struct font *find_font_with_char(int, struct font **, int *, int *);
+ inline static struct letter *find_char_in_font(struct font *, int);
+ static inline int compute_width (int ix, int iy, int required_height);
+-static void prune_font_cache(struct graphics_driver *gd);
+ 
+ int n_fonts;
+ 
+@@ -668,7 +668,7 @@
+ }
+ 
+ /* Prunes the cache to comply with maximum size */
+-static void prune_font_cache(struct graphics_driver *gd)
++void prune_font_cache(struct graphics_driver *gd)
+ {
+ 	struct font_cache_entry *bottom;
+ 
