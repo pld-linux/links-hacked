@@ -34,6 +34,7 @@ Patch4:		%{name}-suffix.patch
 Patch5:		%{name}-gcc34.patch
 Patch6:		%{name}-en-fix.patch
 Patch7:		%{name}-pl-update.patch
+Patch8:		%{name}-gcc4.patch
 URL:		http://xray.sai.msu.ru/~karpov/links-hacked/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -43,7 +44,7 @@ BuildRequires:	openssl-devel >= 0.9.7d
 BuildRequires:	zlib-devel
 %if %{with graphics}
 %{?with_directfb:BuildRequires:	DirectFB-devel}
-%{?with_x:BuildRequires:	XFree86-devel}
+%{?with_x:BuildRequires:	xorg-lib-libX11-devel}
 %{?with_javascript:BuildRequires:	bison}
 %{?with_javascript:BuildRequires:	flex}
 BuildRequires:	freetype-devel
@@ -122,6 +123,7 @@ Links - це текстовий WWW броузер, на перший погля
 %patch5 -p1
 %patch6 -p1
 %patch7 -p1
+%patch8 -p1
 
 rm -rf autom4te.cache
 
